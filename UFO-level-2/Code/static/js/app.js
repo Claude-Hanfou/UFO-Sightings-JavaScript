@@ -109,7 +109,7 @@ function runEnter() {
   //console.log(inputValue);
 //   console.log(tableData);
 
-  var filteredData =  tableData.filter(table => table.datetime === inputValue ||
+  var filteredData =  tableData.filter(table => table.datetime === inputValue && || 
     table.city === inputValue2 ||
     table.state === inputValue3 ||
     table.country === inputValue4 ||
