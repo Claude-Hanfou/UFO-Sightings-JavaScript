@@ -71,6 +71,19 @@ var form = d3.select("#form-group");
 button.on("click", runEnter);
 form.on("submit",runEnter);
 
+
+// Update table with a new dataset
+function updateTable(dataset) {
+  tbody.html('');
+  dataset.forEach((toBeDefined) => {
+    var row = tbody.append("tr");
+    Object.entries(toBeDefined).forEach(([key,value]) => {
+      var cell = tbody.append("td");
+      cell.text(value);
+    });
+  });
+}
+
 // Complete the event handler function for the form
 function runEnter() {
 
@@ -83,15 +96,23 @@ function runEnter() {
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
-  console.log(inputValue);
-  console.log(tableData);
+  //console.log(inputValue);
+//   console.log(tableData);
 
-  var filteredData = tableData.filter(table => table.datetime === inputValue);
+  var filteredData =  tableData.filter(table => table.datetime === inputValue);
 
   console.log(filteredData);
 
-  tbody.append("tr").text(filteredData)
-
-
+  return filteredData;
 
 }
+
+
+
+updateTable(data); 
+button.on("click", function() {
+  // When filter is click
+  // Filter data by datetime and update the table
+  var result = runEnter(data);
+  updateTable(result);
+});
