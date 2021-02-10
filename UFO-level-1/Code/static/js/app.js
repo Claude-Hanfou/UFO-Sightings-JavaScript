@@ -90,5 +90,8 @@ function runEnter() {
 
   console.log(filteredData);
 
+  tbody.append("tr").text(filteredData)
+
+
 
 }
