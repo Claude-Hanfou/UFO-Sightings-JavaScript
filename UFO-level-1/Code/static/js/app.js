@@ -72,7 +72,7 @@ button.on("click", runEnter);
 form.on("submit",runEnter);
 
 
-// Update table with a new dataset
+// Update table with a new dataset by creating a function
 function updateTable(dataset) {
   tbody.html('');
   dataset.forEach((toBeDefined) => {
@@ -107,7 +107,7 @@ function runEnter() {
 
 }
 
-
+//use update table function and runEnter function to return filtered data
 
 updateTable(data); 
 button.on("click", function() {
