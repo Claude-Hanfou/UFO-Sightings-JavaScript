@@ -111,8 +111,6 @@ function runEnter() {
 
 updateTable(data); 
 button.on("click", function() {
-  // When filter is click
-  // Filter data by datetime and update the table
   var result = runEnter(data);
   updateTable(result);
 });
