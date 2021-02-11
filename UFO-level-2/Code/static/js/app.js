@@ -109,16 +109,13 @@ function runEnter() {
   //console.log(inputValue);
 //   console.log(tableData);
 
-  var filteredData =  tableData.filter(table => table.datetime === inputValue && || 
-    table.city === inputValue2 ||
-    table.state === inputValue3 ||
-    table.country === inputValue4 ||
+  var filteredData =  tableData.filter(table => table.datetime === inputValue && 
+    table.city === inputValue2  &&
+    table.city === inputValue2 &&
+    table.state === inputValue3 &&
+    table.country === inputValue4 &&
     table.shape === inputValue5 
   );
-
-  // table.state === inputValue ||
-    // table.country === inputValue ||
-    // table.shape === inputValue
 
   console.log(filteredData);
 
