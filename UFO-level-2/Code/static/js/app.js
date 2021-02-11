@@ -123,6 +123,7 @@ function runEnter() {
 
 }
 
+
 //use update table function and runEnter function to return filtered data
 
 updateTable(data); 
@@ -130,3 +131,6 @@ button.on("click", function() {
   var result = runEnter(data);
   updateTable(result);
 });
+
+
+
