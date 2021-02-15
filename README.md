@@ -2,9 +2,9 @@
 
 
 ## Automatic Table and Date Search
-Create a basic HTML web page dispay the UFO data
+An HTML web page was created to display the UFO data
 
-Using the UFO dataset provided in the form of an array of JavaScript objects, the code appends a table to  aweb page and then adds new rows of data for each UFO sighting.
+Using the UFO dataset provided in the form of an array of JavaScript objects, the code appends a table to a web page and then adds new rows of data for each UFO sighting.
 
 The table has a column for date/time, city, state, country, shape, and comment .
 
