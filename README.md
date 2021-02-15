@@ -101,7 +101,7 @@ filteredData.forEach(function(date) {
 ```
 
 
-##Multiple Search Categories
+## Multiple Search Categories
 Using multiple input tags and/or select dropdowns, the JavaScript code ensures that the user can to set multiple filters and search for UFO sightings using the following criteria based on the table columns:
 
 date/time
