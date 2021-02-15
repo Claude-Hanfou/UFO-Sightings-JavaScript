@@ -45,152 +45,41 @@ function runEnter() {
   // Prevent the page from refreshing
   d3.event.preventDefault();
   
-  // Select the input element and get the raw HTML node
+  //Select the input element and get the raw HTML node
   var inputElement = d3.select("#datetime");
-  
+  var inputElement1 = d3.select("#city");
+  var inputElement2 = d3.select("#state");
+  var inputElement3 = d3.select("#country");
+  var inputElement4 = d3.select("#shape");
+
   // Get the value property of the input element
   var inputValue = inputElement.property("value");
- 
-  var filteredData1 =  tableData.filter(table => table.datetime === inputValue)
+  var inputValue1 = inputElement1.property("value");
+  var inputValue2 = inputElement2.property("value");
+  var inputValue3 = inputElement3.property("value");
+  var inputValue4 = inputElement4.property("value");
 
-  console.log(filteredData1);
+  var filteredData =  tableData.filter( table => {
+    return (table.datetime === inputValue  || !inputValue)&& 
+            (table.city === inputValue1 || !inputValue1) &&
+            (table.state === inputValue2 || !inputValue2) &&
+            (table.country === inputValue3|| !inputValue3) &&
+            (table.shape === inputValue4 || !inputValue4)
+  })
 
-  filteredData1.forEach(function(date) {
+
+
+
+  console.log(filteredData);
+
+  filteredData.forEach(function(date) {
     console.log(date);
-    var drow = tbody.append("tr");
+    var row = tbody.append("tr");
     Object.entries(date).forEach(function([key, value]) {
       console.log(key, value);
-      var celld = drow.append("td");
+      var celld = row.append("td");
       celld.text(value);
     });
   });
 
 }
-
-
-
-// Complete the event handler function for the form for the city
-function runEnter() {
-
-  tbody.html("");
-
-  // Prevent the page from refreshing
-  d3.event.preventDefault();
-  
-  // Select the input element and get the raw HTML node
-  var inputElement2 = d3.select("#city");
-  
-  // Get the value property of the input element
-  var inputValue2 = inputElement2.property("value");
-
-  var filteredData2 =  tableData.filter(table => table.city === inputValue2)
-
-  console.log(filteredData2);
-
-  filteredData2.forEach(function(cit) {
-    console.log(cit);
-    var crow = tbody.append("tr");
-    Object.entries(cit).forEach(function([key, value]) {
-      console.log(key, value);
-      var cellc = crow.append("td");
-      cellc.text(value);
-    });
-  });
-
-}
-
-
-// // // Complete the event handler function for the form for the state
-
-// function runEnter() {
-
-//   tbody.html("");
-
-//   // Prevent the page from refreshing
-//   d3.event.preventDefault();
-  
-//   // Select the input element and get the raw HTML node
-//   var inputElement3 = d3.select("#state");
-
-//   // Get the value property of the input element
-//   var inputValue3 = inputElement3.property("value");
-
-//   var filteredData3 =  tableData.filter(table => table.state === inputValue3)
-  
-//   console.log(filteredData3);
-
-//   filteredData3.forEach(function(stat) {
-//     console.log(stat);
-//     var row = tbody.append("tr");
-//     Object.entries(stat).forEach(function([key, value]) {
-//       console.log(key, value);
-//       var cells = row.append("td");
-//       cells.text(value);
-//     });
-//   });
-
-// }
-
-
-// // Complete the event handler function for the form for the country
-// function runEnter() {
-
-//   tbody.html("");
-
-//   // Prevent the page from refreshing
-//   d3.event.preventDefault();
-  
-//   // Select the input element and get the raw HTML node
-//   var inputElement4 = d3.select("#country");
-  
-
-
-//   // Get the value property of the input element
-//   var inputValue4 = inputElement4.property("value");
-
-//   var filteredData4 =  tableData.filter(table => table.country === inputValue4)
-  
-//   console.log(filteredData4);
-
-
-//   filteredData4.forEach(function(count) {
-//     console.log(count);
-//     var row = tbody.append("tr");
-//     Object.entries(count).forEach(function([key, value]) {
-//       console.log(key, value);
-//       var cellc = row.append("td");
-//       cellc.text(value);
-//     });
-//   });
-
-// }
-
-// // Complete the event handler function for the form for the shape
-// function runEnter() {
-
-//   tbody.html("");
-
-//   // Prevent the page from refreshing
-//   d3.event.preventDefault();
-  
-//   // Select the input element and get the raw HTML node
-//   var inputElement5 = d3.select("#shape");
-  
-//   // Get the value property of the input element
-//   var inputValue5 = inputElement5.property("value");
-
-//   var filteredData5 =  tableData.filter(table => table.shape === inputValue5)
- 
-//   console.log(filteredData5);
-
-//   filteredData5.forEach(function(scit) {
-//     console.log(scit);
-//     var row = tbody.append("tr");
-//     Object.entries(scit).forEach(function([key, value]) {
-//       console.log(key, value);
-//       var cellc = row.append("td");
-//       cellc.text(value);
-//     });
-//   });
-
-// }
